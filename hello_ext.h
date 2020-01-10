@@ -12,11 +12,12 @@ struct hello_ext
 
 struct hello_ext_ops
 {
-    struct hello_ops hello_ops;
-
     int (*init)(void* self_, int num, int val);
     void (*exit)(void* self_);
-    
+
+    void (*set_num)(void* self_, int num);
+    int (*get_num)(void* self_);
+
     void (*set_val)(void* self_, int val);
     int (*get_val)(void* self_);
 };
@@ -28,6 +29,7 @@ struct hello_ext_trait
 };
 
 extern struct hello_ext_ops hello_ext_ops;
+extern struct hello_ops hello_ext_impl_hello_ops;
 
 
 

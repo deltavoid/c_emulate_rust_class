@@ -41,7 +41,7 @@ int main()
     hello_ext_ops.init(hello_ext, 1, 2);
 
     struct hello_trait hello2 = {
-        .ops = &hello_ext_ops.hello_ops,
+        .ops = &hello_ext_impl_hello_ops,
         .data = hello_ext,
     };
 

@@ -50,14 +50,17 @@ static int hello_ext_get_val(void* self_)
 } 
 
 struct hello_ext_ops hello_ext_ops = {
-    .hello_ops = {
-        .init = NULL,
-        .exit = hello_ext_exit,
-        .set = hello_ext_set_num,
-        .get = hello_ext_get_num,
-    },
     .init = hello_ext_init,
     .exit = hello_ext_exit,
+    .set_num = hello_ext_set_num,
+    .get_num = hello_ext_get_num,
     .set_val = hello_ext_set_val,
     .get_val = hello_ext_get_val,
+};
+
+struct hello_ops hello_ext_impl_hello_ops = {
+    .init = NULL,
+    .exit = hello_ext_exit,
+    .set = hello_ext_set_num,
+    .get = hello_ext_get_num,
 };
