@@ -25,7 +25,7 @@ struct hello_trait
     void* data;
 };
 
-extern struct hello_ops hello_ops_;
+extern struct hello_ops hello_ops;
 
 
 

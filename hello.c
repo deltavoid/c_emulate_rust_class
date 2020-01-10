@@ -30,7 +30,7 @@ static void hello_exit(void* self_)
     self->num = 0;
 }
 
-struct hello_ops hello_ops_ = {
+struct hello_ops hello_ops = {
     .init = hello_init,
     .set = hello_set,
     .get = hello_get,
