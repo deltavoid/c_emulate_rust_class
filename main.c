@@ -12,19 +12,20 @@ int main()
     struct hello* hello_ = malloc(sizeof(struct hello));
     hello_ops_.init(hello_, 1);
 
-    val = hello_->ops->get(hello_);
+    struct hello_trait hello1 = {
+        .ops = &hello_ops_,
+        .data = hello_
+    };
+
+    val = hello1.ops->get(hello1.data);
     printf("hello_ value: %d\n", val);
 
-    hello_->ops->set(hello_, 2);
-    val = hello_->ops->get(hello_);
+    hello1.ops->set(hello1.data, 2);
+    val = hello1.ops->get(hello1.data);
     printf("hello_ value: %d\n", val);
 
-    hello_->ops->exit(hello_);
+    hello1.ops->exit(hello1.data);
     free(hello_);
-
-    
-
-    
 
 
     return 0;
